@@ -1,0 +1,67 @@
+
+html, body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: #050505;
+  }
+
+  .marginTop{
+    margin-top: 1vw;
+  }
+  .title{
+    font-size: 8vw;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 6vw;
+    
+    
+  }
+  .custom-select{
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .custom-select select {
+    display: none; /*hide original SELECT element:*/
+  }
+
+
+  .grid-wraper {
+    display: grid;
+    grid-template-columns: 50pt 1fr 0.5fr 50pt;
+    grid-template-rows: 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "LM slika info DM" 
+                         "LM slika info DM";
+  }
+  
+.slika { 
+    grid-area: slika;
+}
+  
+.info {
+    grid-area: info; 
+    align-self: end;
+    text-align: right;
+    
+
+    
+}
+  
+.opis { 
+    grid-area: opis; 
+    font-weight: 300;
+    font-size: 2vw;
+}
+  
+.LM { grid-area: LM; }
+.DM { grid-area: DM; }
+
+
+
+object {
+  width: 100%;
+}
+
+.symb {
+  width : 20%;
+  position : absolute;
+}
