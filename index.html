@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    
+
 
 <head>
     <meta charset="utf-8">
@@ -11,23 +11,28 @@
 </head>
 
 <body>
-    <label for="cocktails">Choose a cocktail:</label>
-    <select id="dataList" name="cocktailSearch" custom-select>
-        
-    </select>
+    <div class="select-box">
+        <label for="cocktails" class="label select-box1">
+            <span class="label-desc">Choose a cocktail</span>
+        </label>
+        <select id="dataList" name="cocktailSearch" class="select"></select>
+    </div>
+
+
+    
 
     <div class="grid-wraper">
         <div class="LM"></div>
 
-        <symbol id="graph" class="slika" viewBox="0 0 885 800">
-        </symbol>
+        <div id="graph" class="slika">
+        </div>
 
         <div class="info">
-            <div >
-                <label id="CocktailName" class="title"></label>
+            <div>
+                <label id="CocktailName" class="title word-break"></label>
             </div>
             <div class="opis marginTop">
-                <label id="CocktailInfo" class="instructions "></label>
+                <label id="CocktailInfo"></label>
             </div>
         </div>
 

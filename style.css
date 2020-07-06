@@ -8,25 +8,18 @@ html, body, h1, h2, h3, h4, h5, h6 {
     margin-top: 1vw;
   }
   .title{
-    font-size: 8vw;
+    font-size: 7vw;
     text-transform: uppercase;
     font-weight: 900;
-    line-height: 6vw;
-    
-    
+    line-height: 5.5vw;    
   }
   .custom-select{
     font-family: 'Montserrat', sans-serif;
   }
 
-  .custom-select select {
-    display: none; /*hide original SELECT element:*/
-  }
-
-
   .grid-wraper {
     display: grid;
-    grid-template-columns: 50pt 1fr 0.5fr 50pt;
+    grid-template-columns: 50pt 1fr auto 50pt;
     grid-template-rows: 1fr 1fr;
     gap: 1px 1px;
     grid-template-areas: "LM slika info DM" 
@@ -38,30 +31,115 @@ html, body, h1, h2, h3, h4, h5, h6 {
 }
   
 .info {
+  width: 100%;
     grid-area: info; 
     align-self: end;
-    text-align: right;
-    
-
-    
+    text-align: right; 
 }
   
 .opis { 
-    grid-area: opis; 
     font-weight: 300;
-    font-size: 2vw;
+    font-size: 1.8vw;
 }
   
-.LM { grid-area: LM; }
-.DM { grid-area: DM; }
+.LM { 
+  grid-area: LM;
+  width:5%;
+   }
+.DM { grid-area: DM; width:5%;}
 
 
+.word-break {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+}
 
-object {
+
+.select-box {
+  cursor: pointer;
+  position : relative;
+  max-width:  20em;
+  
   width: 100%;
 }
 
-.symb {
-  width : 20%;
-  position : absolute;
+.select,
+.label {
+  color: #414141;
+  display: block;
+  font: 400 15px/1.8em 'Montserrat', sans-serif;
+}
+
+.select {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  padding: 5px 0;
+  height: 40px;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  background: none transparent;
+  border: 0 none;
+}
+.select-box1 {
+  background: #ececec;
+}
+
+.label {
+  position: relative;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.open .label::after {
+   content: "▲";
+}
+.label::after {
+  content: "▼";
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px 15px;
+  border-left: 5px solid #dedede;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+  .grid-wraper {
+    display: grid;
+    grid-template-columns: 50pt 1fr 50pt;
+    grid-template-rows: 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "LM slika  DM" 
+                         "LM info  DM";
+  }
+
+  .info {
+    margin-top: 3vw;
+    width: 100%;
+      grid-area: info; 
+      align-self: flex-start;
+      text-align: left; 
+  }
+
+  .title{
+    font-size: 12vw;   
+    line-height: 9vw;  
+  }
+
+  .opis { 
+    font-size: 4vw;
+}
+
+.select-box {
+  max-width:  100%;
+  
+  width: 100%;
+}
+
+.label {
+  font: 400 2.5em/2em 'Montserrat', sans-serif;
+}
 }

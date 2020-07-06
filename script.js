@@ -81,13 +81,13 @@ var allextras = {
 // Definiranje podataka o čašama koji su potrebni za iscrtavanje grafikona
 var allglasses = [];
 coll = {
-    width: 240, height: 700, top: 100, right: 20, bottom: 50, left: 130 + 10,
+    width: 240, height: 700, top: 80, right: 20, bottom: 50, left: 130 + 10,
     svg: "images/collins_glass.svg", maxVolumen: 1, Y_height: 640
 };
 allglasses["Collins glass"] = coll;
 
 cock = {
-    width: 500, height: 700, top: 100, right: 20, bottom: 50, left: 10,
+    width: 500, height: 700, top: 80, right: 20, bottom: 50, left: 10,
     svg: "images/cocktail_glass.svg", maxVolumen: 1, Y_height: 242
 };
 allglasses["Cocktail glass"] = cock;
@@ -383,7 +383,7 @@ function fillGlass(glassType) {
         .data(stackedData)
         .enter().append("g")
         .attr("fill", function (d) { return color(d.key); })
-        // enter drugi put za dodavanje rect elemenata sub
+        // enter drugi put za dodavanje rect elemenata za svaki sastojak
         .selectAll("rect")
         .data(function (d) { return d; })
         .enter().append("rect")
@@ -546,7 +546,7 @@ function fillInfo() {
 class ConeVolumen {
     constructor() {
         this.angle = 68;
-        this.startVolumen = 0.02 * measure.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+        this.startVolumen = 0.03 * measure.reduce((a, b) => parseInt(a) + parseInt(b), 0);
         this.startHeight = hFromV(this.startVolumen, this.angle);
         this.Volumens = [this.startVolumen];
     }
